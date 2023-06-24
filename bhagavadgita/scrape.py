@@ -6,10 +6,13 @@ URL1 = '&field_nsutra_value='
 URL2 = '&etsiva=1&choose=1'
 
 
-def Parse(val0, val1):
-    Url = URL + str(val0) + URL1 + str(val1) + URL2
-    chapter_shloka = str(val0) + '.' + str(val1)
-    print(chapter_shloka)
+def isEng(san):
+    return all(ord(char) < 128 for char in san)
+
+
+def Parse(value1, value2):
+    Url = URL + str(value1) + URL1 + str(value2) + URL2
+    chapter_shloka = str(value1) + '.' + str(value2)
 
     while True:
         try:
@@ -29,17 +32,39 @@ def Parse(val0, val1):
 
     soup = bs4.BeautifulSoup(html_content, 'html.parser')
     FONT = soup.findAll('font', {'size': '3px'})
-    sanskrit_shloka = ''
 
     try:
-        san = FONT[0].findAll(string=True)
-        eng = FONT[1].findAll(string=True)
+        sanX = FONT[0].findAll(string=True)
+        engX = FONT[1].findAll(string=True)
     except IndexError:
         return None, None
 
-    print(san)
-    print(eng)
+    sanskrit_shloka = ''
+    for i in sanX:
+        if isEng(i):
+            continue
+        first = str(i.encode('utf8'))
+        sanskrit_shloka += first + ' '
 
+    english_shloka = ''
+    try:
+        for i in engX:
+            english_shloka += str(i.encode('utf8'))
+    except Exception:
+        return None, None
+
+    sanskrit_shloka = sanskrit_shloka.strip()
+    sanskrit_shloka = sanskrit_shloka.strip(' ')
+    sanskrit_shloka = sanskrit_shloka.strip('\n')
+
+    english_shloka = english_shloka.strip()
+    english_shloka = english_shloka.strip('\n')
+
+    if english_shloka == '':
+        return None, None
+
+    print(sanskrit_shloka)
+    print(english_shloka)
     print("complete")
 
 
