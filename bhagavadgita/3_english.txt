@@ -1,0 +1,3 @@
+b'\n3.1 Arjuna said  If Thou thinkest that knowledge is superior to action, O Krishna, why then, O Kesava, dost Thou ask me to engage in this terrible action?\n\n'
+b'3.2 With this apparently perplexing speech, Thou confusest, as it were, my understanding; therefore tell me that one way for certain by which I may attain bliss.\n\n'
+b'3.3 The Blessed Lord said  In this world there is a twofold path, as I said before, O sinless one; the path of knowledge of the Sankhyas and the path of action of the Yogins.\n\n'

@@ -43,13 +43,13 @@ def Parse(value1, value2):
     for i in sanX:
         if isEng(i):
             continue
-        first = str(i.encode('utf8'))
+        first = str(i.encode('utf-8'))
         sanskrit_shloka += first + ' '
 
     english_shloka = ''
     try:
         for i in engX:
-            english_shloka += str(i.encode('utf8'))
+            english_shloka += str(i.encode('utf-8'))
     except UnicodeEncodeError:
         return None, None
 
@@ -69,7 +69,7 @@ def Parse(value1, value2):
 def get(chapter):
     Member = []
     count = 0
-    for shloka in range(1, 2):
+    for shloka in range(1, 50):
         sanskrit, english = Parse(chapter, shloka)
 
         if sanskrit is None and english is None:
@@ -90,10 +90,11 @@ def get(chapter):
         print(shloka)
         if sanskrit is not None and english is not None:
             count = 0
-            file = open(str(chapter) + '_sanskrit.txt', 'a+')
-            file.write(sanskrit + '\n')
-            file = open(str(chapter) + '_english.txt', 'a+')
-            file.write(english + '\n')
+            with open(str(chapter) + '_sanskrit.txt', 'a+', encoding='utf-8') as file:
+                file.write(sanskrit + '\n')
+            with open(str(chapter) + '_english.txt', 'a+', encoding='utf-8') as file:
+                file.write(english + '\n')
+
             file.close()
         else:
             count += 1
@@ -102,5 +103,5 @@ def get(chapter):
 
 
 # for example: I have a two chapter
-for chapters in range(1, 2):
+for chapters in range(1, 19):
     get(chapters)
