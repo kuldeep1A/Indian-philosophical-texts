@@ -63,17 +63,17 @@ def Parse(value1, value2):
     if english_shloka == '':
         return None, None
 
-    print(sanskrit_shloka)
-    print(english_shloka)
-    print("complete")
+    return sanskrit_shloka, english_shloka
 
 
 def get(chapter):
     Member = []
     count = 0
-    for shloka in range(1, 2):
-        Parse(chapter, shloka)
+    for shloka in range(1, 10):
+        sanskrit, english = Parse(chapter, shloka)
 
+        print(sanskrit)
+        print(english)
 
 # for example: I have a two chapter
 for chapters in range(1, 2):
