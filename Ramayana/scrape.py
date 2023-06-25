@@ -8,7 +8,7 @@ SLOKAURL = "&field_sloka_value="
 
 
 def isEng(san):
-    return all(ord(char) for char in san)
+    return all(ord(char) < 128 for char in san)
 
 
 def Parse(value1, value2, value3):
@@ -35,22 +35,42 @@ def Parse(value1, value2, value3):
     DIV = soup.findAll("div", {"class": "field-content"})
 
     try:
-        eng = DIV[0].findAll(string=True)
+        allX = DIV[0].findAll(string=True)
     except IndexError:
         return None, None
 
+
     sanskrit_shloka = ''
-    for i in eng:
+    for i in allX:
         if isEng(i):
             continue
+
+
         first = str(i.encode('utf-8'))
+        for aa in range(-7, 8):
+            for bb in range(-7, 8):
+                first = first.replace(str(value1) + '.' + str(value2 + aa) + '.' + str(value3 + bb), '')
+                first = first.replace(str(value1) + str(value2 + aa) + str(value3 + bb), '')
+
+        first = first.replace('\xe0\xa5\xa4', '')   # |
+
+        if i == allX[-1]:
+            first += '\xe0\xa5\xa4\xe0\xa5\xa4'     # ||
+        else:
+            first += '\xe0\xa5\xa4'                 # |
+
         sanskrit_shloka += first + ' '
 
-
-    # with open(f"{idy}_sans.txt", "a+", encoding='utf-8') as file:
-    #     file.write(sanskrit_shloka)
+    engX = DIV[2].findAll(string=True)
+    english_shloka = ''
+    try:
+        for i in engX:
+            english_shloka += str(i.encode('utf-8'))
+    except ExceptionGroup:
+        return None, None
 
     print(sanskrit_shloka)
+    print(english_shloka)
 
 
 def get(kanda, sarga, kanda_tid):
