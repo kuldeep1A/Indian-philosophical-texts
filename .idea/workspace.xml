@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b517d455-2e0f-43b9-8125-1f15cdfba5bf" name="Changes" comment="xml">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ramayana/scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ramayana/scrape.py" afterDir="false" />
     </list>
@@ -103,6 +101,7 @@
         <item itemvalue="Python.scrape" />
         <item itemvalue="Python.scrape (1)" />
         <item itemvalue="Python.scrape" />
+        <item itemvalue="Python.scrape (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -211,7 +210,23 @@
       <option name="project" value="LOCAL" />
       <updated>1687687512192</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update image">
+      <option name="closed" value="true" />
+      <created>1687693103646</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1687693103646</updated>
+    </task>
+    <task id="LOCAL-00014" summary="workspace update xml">
+      <option name="closed" value="true" />
+      <created>1687693188538</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687693188538</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -236,7 +251,9 @@
     <MESSAGE value="solution walkthrough: steps for solve large problem" />
     <MESSAGE value="complete solution" />
     <MESSAGE value="xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="xml" />
+    <MESSAGE value="update image" />
+    <MESSAGE value="workspace update xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace update xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
