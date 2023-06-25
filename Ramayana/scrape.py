@@ -1,10 +1,14 @@
-import urllib
+import urllib.request
 import bs4
 
 URL = "https://www.valmiki.iitk.ac.in/content?language=dv"
 KANDA_URL = "&field_kanda_tid="
 SARGAURL = "&field_sarga_value="
 SLOKAURL = "&field_sloka_value="
+
+
+def isEng(san):
+    return all(ord(char) for char in san)
 
 
 def Parse(value1, value2, value3):
@@ -14,24 +18,48 @@ def Parse(value1, value2, value3):
     while True:
         try:
             # retrieve the content of a web page specified by the 'Url' variable
-            html_content = urllib.request.openurl(Url).read()
+            html_content = urllib.request.urlopen(Url).read()
             break
         except ExceptionGroup:
             pass
 
-    html_strign = html_content.decode()
+    # Convert the bytes data to string
+    html_string = html_content.decode(errors="ignore")
+
+    # Replace a substring in the HTML string
+    html_content = html_string.replace('\r', '')
+    if idy not in html_content:
+        return None, None
+
+    soup = bs4.BeautifulSoup(html_content, 'html.parser')
+    DIV = soup.findAll("div", {"class": "field-content"})
+
+    try:
+        eng = DIV[0].findAll(string=True)
+    except IndexError:
+        return None, None
+
+    sanskrit_shloka = ''
+    for i in eng:
+        if isEng(i):
+            continue
+        first = str(i.encode('utf-8'))
+        sanskrit_shloka += first + ' '
+
+
+    # with open(f"{idy}_sans.txt", "a+", encoding='utf-8') as file:
+    #     file.write(sanskrit_shloka)
+
+    print(sanskrit_shloka)
 
 
 def get(kanda, sarga, kanda_tid):
     Member = []
     for sarga_n in range(1, sarga):
         count = 0
-        for sloka_n in range(1, 3):
+        for sloka_n in range(1, 2):
             # sanskrit, english = Parse(kanda_tid, sarga_n, sloka_n)
             Parse(kanda_tid, sarga_n, sloka_n)
-
-
-
 
 
 # Content: name(kanda), sarga, Sloka
@@ -41,7 +69,6 @@ def get(kanda, sarga, kanda_tid):
 # Example
 Kandas = [('balakanda', 2, 1), ('ayodhyakanda', 2, 2), ('aranyakanda', 2, 3), ('kishkindakanda', 2, 4),
           ('sundarkanda', 2, 5), ('yuddhakanda', 2, 6)]
-
 
 for kanda_no, sarga_no, kanda_id in Kandas:
     get(kanda_no, sarga_no, kanda_id)
