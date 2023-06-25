@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b517d455-2e0f-43b9-8125-1f15cdfba5bf" name="Changes" comment="xml">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ramayana/scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ramayana/scrape.py" afterDir="false" />
     </list>
@@ -36,21 +38,22 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Rc5Lf1TlcIvjFowFfDMHLqmZol" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "developemnt",
-    "last_opened_file_path": "D:/program/Python/Github/Indian-philosophical-texts",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;developemnt&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/program/Python/Github/Indian-philosophical-texts&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.scrape (1)">
     <configuration name="scrape (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Indian-philosophical-texts" />
@@ -96,6 +99,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.scrape (1)" />
+        <item itemvalue="Python.scrape" />
         <item itemvalue="Python.scrape (1)" />
         <item itemvalue="Python.scrape" />
       </list>
