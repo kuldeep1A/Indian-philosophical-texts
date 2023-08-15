@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b517d455-2e0f-43b9-8125-1f15cdfba5bf" name="Changes" comment="xml">
+      <change afterPath="$PROJECT_DIR$/AVADHUTA GITA/sraper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ramayana/scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ramayana/scrape.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +52,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.scrape (1)">
+  <component name="RunManager" selected="Python.scrape">
     <configuration name="scrape (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Indian-philosophical-texts" />
       <option name="INTERPRETER_OPTIONS" value="" />
