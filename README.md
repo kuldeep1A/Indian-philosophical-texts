@@ -1,2 +1,3 @@
 # Indian-philosophical-texts
-The texts are in Sanskrit and can be viewed in any of language scripts
+
+Discover ancient wisdom and spiritual insights in Indian philosophical texts like Avadhuta Gita, Ramayana, Bhagavad Gita, Brahma Sutras, and Ramcharitmanas. Explore profound teachings on spirituality, philosophy, and life within these classical texts.
