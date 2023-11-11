@@ -41,10 +41,16 @@ def parse(value1, value2, value3):
         return None, None, None
 
     if value3 == 1:
-        eng = str(shloka_x).split("[")[2].split("]")[0]
-        san_list = str(shloka_x).split("[")[2].split("]")[1].split(",")
-        san = san_list[1] + "," + san_list[2]
-        shloka = eng + " " + san
+        san_list = str(shloka_x).split("[")[2].split("]")[0].split(",")
+        if len(san_list) > 1:
+            eng = san_list[0]
+            san = san_list[1] + "," + san_list[2]
+            shloka = eng + " " + san
+        else:
+            eng = str(shloka_x).split("[")[2].split("]")[0]
+            san_list = str(shloka_x).split("[")[2].split("]")[1].split(",")
+            san = san_list[1] + "," + san_list[2]
+            shloka = eng + " " + san
     else:
         shloka = str(shloka_x).split("[")[1].split("]")[0]
 
@@ -87,7 +93,7 @@ def get(kanda, sarga, kanda_tid):
                 with open(str(kanda_tid) + '_' + str(kanda) + '_translate.txt', 'a+', encoding='utf-8') as file:
                     file.write(translate + '_' + "\n\n")
                 with open(str(kanda_tid) + '_' + str(kanda) + '_description.txt', 'a+', encoding='utf-8') as file:
-                 file.write(description + "\n\n")
+                    file.write(description + "\n\n")
                 file.close()
             else:
                 count += 1
