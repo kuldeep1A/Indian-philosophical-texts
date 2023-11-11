@@ -28,7 +28,7 @@ def parse(value1, value2, value3):
     # Replace a substring in the HTML string
     html_content = html_string.replace('\r', '')
     if idy not in html_content:
-        return None, None
+        return None, None, None
 
     soup = bs4.BeautifulSoup(html_content, 'html.parser')
     div = soup.findAll("div", {"class": "field-content"})
@@ -38,7 +38,7 @@ def parse(value1, value2, value3):
         translate_x = div[1].findAll(string=True)
         description_x = div[2].findAll(string=True)
     except IndexError:
-        return None
+        return None, None, None
 
     if value3 == 1:
         eng = str(shloka_x).split("[")[2].split("]")[0]
@@ -59,12 +59,12 @@ def get(kanda, sarga, kanda_tid):
     description_member = []
     for sarga_n in range(1, sarga):
         count = 0
-        for sloka_n in range(1, 3):
-            print("kanda: ", kanda, "=", kanda_tid, " sloka_n: ", sloka_n, "****")
+        for sloka_n in range(1, 150):
+            print("kanda: ", kanda, "=", kanda_tid, "sarga: ", sarga_n, " sloka_n: ", sloka_n, "****")
             shloka, translate, description = parse(kanda_tid, sarga_n, sloka_n)
             if shloka is None and translate is None and description is None:
                 count += 1
-                if count >= 20:
+                if count >= 5:
                     break
             else:
                 count = 0
@@ -87,7 +87,7 @@ def get(kanda, sarga, kanda_tid):
                 with open(str(kanda_tid) + '_' + str(kanda) + '_translate.txt', 'a+', encoding='utf-8') as file:
                     file.write(translate + '_' + "\n\n")
                 with open(str(kanda_tid) + '_' + str(kanda) + '_description.txt', 'a+', encoding='utf-8') as file:
-                    file.write(description + "\n\n")
+                 file.write(description + "\n\n")
                 file.close()
             else:
                 count += 1
