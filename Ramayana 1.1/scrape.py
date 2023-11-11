@@ -4,6 +4,7 @@ import os
 import dotenv
 
 dotenv.load_dotenv()
+# Data access through valmiki site
 URL = os.getenv("URL1")
 KANDA_URL = os.getenv("KANDA_URL1")
 SARGAURL = os.getenv("SARGAURL1")
@@ -42,7 +43,7 @@ def parse(value1, value2, value3):
 
     if value3 == 1:
         san_list = str(shloka_x).split("[")[2].split("]")[0].split(",")
-        if len(san_list) > 1:
+        if len(san_list) == 3:
             eng = san_list[0]
             san = san_list[1] + "," + san_list[2]
             shloka = eng + " " + san
